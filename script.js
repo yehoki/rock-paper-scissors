@@ -13,6 +13,7 @@ function getComputerChoice() {
   return choice;
 }
 
+// Helper function
 function convertInputToInt(choice) {
   choice = choice.toLowerCase();
   let intInput;
