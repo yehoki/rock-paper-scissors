@@ -32,6 +32,8 @@ function convertInputToInt(choice) {
   return intInput;
 }
 
+
+// Decide the winner of each game, and check if game is finished
 function decideWinner(resultStatement) {
   const decision = document.querySelector("#decision");
   if (!document.querySelector("#message")) {
@@ -63,6 +65,8 @@ function convertIntToChoice(number) {
   }
 }
 
+
+// Checks if game is over to produce message
 function finishGame(){
     if (userScore === 5){
         document.querySelector('#decision').textContent = `The game is finished, you win ${userScore} to ${computerScore}!`
@@ -73,7 +77,7 @@ function finishGame(){
 
 }
 
-
+// Decides the outcome of each game
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "Incorrect input") {
     return "Invalid input from player";
@@ -100,7 +104,7 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-
+// Button event listeners
 const btns = [...document.querySelectorAll(".option")];
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
