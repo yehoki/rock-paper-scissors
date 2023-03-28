@@ -1,6 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
-
+let gameFinish = 0;
 const computerScoreDisplay = document.querySelector('#computer-score');
 computerScoreDisplay.textContent = computerScore;
 
@@ -36,6 +36,9 @@ function convertInputToInt(choice) {
 
 // Decide the winner of each game, and check if game is finished
 function decideWinner(resultStatement) {
+  if (gameFinish === 1){
+    return ;
+  }
   const decision = document.querySelector("#decision");
   if (!document.querySelector("#message")) {
     const statement = document.createElement("h2");
@@ -71,9 +74,11 @@ function convertIntToChoice(number) {
 function finishGame(){
     if (userScore === 5){
         document.querySelector('#decision').textContent = `The game is finished, you win ${userScore} to ${computerScore}!`
+        gameFinish = 1;
     }
     else if( computerScore === 5){
         document.querySelector('#decision').textContent = `The game is finished, you lost ${userScore} to ${computerScore}!`
+        gameFinish = 1;
     }
 
 }
